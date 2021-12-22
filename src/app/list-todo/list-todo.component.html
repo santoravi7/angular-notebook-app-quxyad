@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="">
+        <button (click)="goBack();" class="back-btn" title="Add a Todo List"><img src="https://image.flaticon.com/icons/svg/2223/2223615.svg"/>
+        </button>
+</div>
+    <div>
+      <div class="col-md-12 col-xs-12 m-10">
+        <div *ngIf="notebook" class="todo-modal" [ngStyle]="{'background-color': notebook.todoList[todoId].color}">
+          <input class="note-heading" [(ngModel)]='notebook.todoList[todoId].name'(keyup.enter)="updateName(notebook)"/>
+          <div class="todo-desc"(mouseleave)="hoverIdx=-1">
+              <label>
+                <input class="todo-input" type="text" [(ngModel)]="newToDoTitle" placeholder="Add new task..." (keyup.enter)="addTodoItem(todoId)">
+              </label>
+              <ol>
+                <li class="overview-img" *ngFor="let todo of notebook.todoList[todoId].list; index as todoEleId ">
+                  <div class="todolist-div" (mouseover)="hoverIdx = todoEleId;" >
+                      <input type="checkbox" (click)="updateTodoItem(todoId,todoEleId,todo.title,!todo.checked)"[(ngModel)]="todo.checked" > 
+                      <label>
+                        <input  type="text" [(ngModel)]="todo.title" (keyup.enter)="updateTodoItem(todoId,todoEleId,todo.title,todo.checked)"/>
+                      </label>
+                  </div>
+                  <span (click)="removeTodoItem(todoId,todoEleId);" >
+                  <button *ngIf="hoverIdx==todoEleId" title="Delete Notebook">
+                    <img src="https://image.flaticon.com/icons/svg/1345/1345925.svg"/>
+                  </button>
+                  </span>
+                </li>
+                
+              </ol>
+              
+          </div>
+          
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.modal-dialog {
+  width: 300px !important;
+  margin: 30px auto;
+}
+
+.pay-btn {
+  border: none;
+  background: rgb(13, 130, 226);
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+}

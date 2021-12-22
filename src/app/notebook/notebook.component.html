@@ -1,0 +1,101 @@
+<div>
+  <button (click)="addNotebook();" class="add-btn" title="Add Note">+</button>
+  
+  <button (click)="proceed()" class="pay-btn">Pay With Razorpay</button>
+
+  <div
+    class="novopay-response-modal modal fade"
+    role="dialog"
+    [ngClass]="{'show': showModal}"
+    id="response-modal"
+    [ngStyle]="{'display': 'none'}"
+  >
+    {{response}}
+  </div>
+
+  <div
+    class="novopay-response-modal modal fade"
+    role="dialog"
+    [ngClass]="{'show': showModal}"
+    id="razorpay-response"
+  >
+    {{razorpayResponse}}
+  </div>
+</div>
+<div class="container">
+    <div *ngFor="let notebook of notebooks; index as notebookId" class="m-10" (mouseenter)="hoverIdx = notebookId" (mouseleave)="hoverIdx = -1"  >
+        <div [ngClass]="{'overlay-div':notebook.id == clickIdx}">
+          <div *ngIf="show && notebook.id == clickIdx" class="settings-tab">
+              <button type="button" class="close pull-right" aria-label="Close" (click)="toggle(notebook.id)">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <div>
+                <h4 class="nb-header">Notebook Info</h4>
+                <div class="nb-info-wrapper">
+                    <div class="nb-info-img">
+                  <div class="notesimg-div set-bg"[style.background]="'url(' + notebook.img + ')'"></div>
+
+                </div>
+                <div class="nb-info-set">
+                  <input class="note-heading" (keyup.enter)="updateName(notebook)"[(ngModel)]='notebook.name'/>
+                   <div class="clr-div"></div>
+                  <img src="https://image.flaticon.com/icons/svg/660/660726.svg"/>
+                  <h4 class="nb-header txt-left">{{notebook.noteList.length+notebook.todoList.length}} Notes</h4> 
+                  <div class="clr-div"></div>
+                  <img src="https://image.flaticon.com/icons/svg/660/660707.svg"/>
+                  <h4 class="nb-header txt-left">{{ notebook.created | date:'dd MMM yyyy' }}</h4>
+                </div>
+                </div>
+                <div class="clr-div"></div>
+                <div class="images-set-tab">
+                  <h4 class="nb-header">Change your background</h4>
+                  <div class="nb-info-img" *ngFor="let image of images">
+                  <div class="notesimg-div set-bg"[style.background]="'url(' + image.value + ')'"(click)="updateImg(image.value,notebook);"></div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-5 col-sm-4 col-lg-2 notebook-div">
+          <a [title]="notebook.name+' details'" routerLink="/detail/{{notebook.id}}" >
+          <div id="container">
+          <div class="notesimg-div"[style.background]="'url(' + notebook.img + ')'"></div>
+             <h4 class="nb-header">{{notebook.name}}</h4> 
+          </div>  
+          </a>
+          <span class="overview-img" [ngClass]="{ 'overlay-icon': true, 'hide': hoverIdx !== notebookId }">
+            <button (click)="openModal(template);" title="Delete Notebook">
+              <img src="https://image.flaticon.com/icons/svg/1345/1345925.svg"/>
+            </button>
+            <div class="clr-div"></div>
+            <button class="nb-info" (click)="toggle(notebook.id)" title="Info">
+              <img src="https://image.flaticon.com/icons/svg/1783/1783316.svg"/>
+            </button>
+            
+          </span>
+         
+          <ng-template #template>
+            
+            <!-- <div class="modal-header modal-sm">
+              
+              <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div> -->
+            <div class="modal-body modal-sm">
+                <h6>Are you sure, you want to delete {{notebook.name}}?</h6>
+                <div class="buttons-section">
+                  <div class="cnl-btn">
+                      <button type="button" class="btn" (click)="modalRef.hide()" >Cancel</button>
+                  </div>
+                  <div class="del-btn">
+                      <button type="button" class="btn" (click)="deleteNotebook(notebook);modalRef.hide()" >Delete</button>
+                  </div>
+                </div>
+            </div>
+          </ng-template>
+        </div>
+      
+    </div>
+</div>
+

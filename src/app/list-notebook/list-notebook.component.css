@@ -1,0 +1,376 @@
+.notes-div{
+  width: 220px !important;
+  min-height: 220px !important; 
+}
+
+.p-15{
+  padding: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .notebook-edit-div input{    
+    font-size:14px !important;
+    font-weight: 700;
+  }
+  .todo-btn{
+    width: 35px !important;
+    height: 25px !important;
+  }
+  .pull-right-div{
+    width: 60px !important;
+  }
+  .notebook-edit-div input{
+    width: 60px;
+  }
+  .notes-div{
+    width: 150px !important;
+    min-height: 150px !important; 
+  }
+  .overlay-icon {    
+    width: 150px !important;
+    height: 150px !important;
+    padding-top: 35px !important;
+    top: 20px !important;
+    left: 0px !important;
+  }
+  .intro{
+    font-size: 10px !important;
+    width: 120px !important;
+    height: 85px !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical;
+    line-height: 1.8;
+  }
+  .overview-img button{
+    width: 25px !important;
+    height: 10px !important;
+    z-index: 2 !important;
+  }
+  .overview-img button img{
+    width: 20px !important;
+  }
+  .p-15{
+    padding:0px !important;
+  }
+}
+
+.back-btn{
+  width: 50px;
+  height: 30px;
+  border: none;
+  background: none;
+  position: absolute;
+  top: 12px;
+  left: 135px;
+}
+
+.todo-wrapper{
+   overflow: hidden;
+   height: 130px;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.todo-width{
+  width: 90%;
+}
+
+.todo-btn{
+    width: 50px;
+    height: 30px;
+    border: none;
+    background: none;
+    float: right;
+}
+
+.todo-btn img, .back-btn img{
+  width: 60%;
+  background: #fff;
+  color: #fff;
+}
+
+.actions-div{
+  width: 58%;
+  position : absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.pull-right-div{
+  float: right;
+  width: 150px;
+}
+
+.notebook-edit-div input{
+  border: none;
+  font-family: lato;
+  font-size:18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.notebook-edit-div{
+  display: inline-block;
+}
+
+.todo-list{
+  padding-left: 0px;
+  float: left;
+  width: 100%;
+  padding-top: 5px;
+  word-break: break-all;
+   
+}
+
+.todo-list li{
+  list-style: none;
+
+}
+
+.todo-list input{
+  border-color: #fff !important;
+  padding-left: 10px;
+  width: 12px;
+  height: 12px;
+  background-size: 12px 12px;
+  cursor: pointer;
+  float: left;
+}
+
+.todo-list label{
+  list-style: none;
+  color: #fff;
+  padding-left: 10px;
+  font-family: lato;
+  font-weight: 400; 
+  float: left;
+  text-align: left;   
+}
+
+ .todo-list input:checked ~ .checkmark {
+	 background-color: #2196f3;
+}
+
+.intro{
+  padding: 5px 0px;
+  padding-bottom: 10px;
+  text-align: left;
+  font-weight: 400;
+  font-family: lato;
+  font-size: 12.5px;
+  width: 160px;
+  height: 115px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  line-height: 1.8;
+}
+
+.m-10{
+  margin-top:25px;
+}
+
+.quote-text{
+  text-align: center;
+  margin-top: 15%;
+  font-size: 2rem !important;
+  font-weight: 400;
+  position: absolute;
+  top: 15%;
+  color: #999999;
+  font-family: Baskerville;
+  font-style: italic;
+  height: 80px;
+  width: 85%;
+}
+
+
+.overlay-icon {
+  position: absolute;
+  top: 35px;
+  left: 15px;
+  width: 220px;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.55);
+  text-align: center;
+  overflow: hidden;
+  padding-top: 85px;
+  z-index: 2;
+}
+
+.overview-img img{
+  width: 20px;
+  float:right;
+  margin-right: 15px;
+}
+
+.overview-img button{
+  border: none;
+  background: none;
+  text-align: right;
+  /* width: 30px !important; */
+  /* padding: 0px !important; */
+  /* position: absolute; */
+  /* top: 60px !important; */
+  /* right: 10px; */
+  float: right;
+  width: 65px;
+  height: 40px;
+  z-index: 2;
+}
+
+.clr-div{
+  clear: both;
+  height: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+
+.modal-dialog {
+    width: 300px !important;
+    margin: 30px auto;
+}
+
+.buttons-section{
+  padding-right: 2px;
+  margin-right: 2px;
+  border-top: solid 1px #F0F0F0;
+}
+
+.buttons-section .btn{
+    background: none;
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 0px;
+}
+
+.buttons-section .del-btn{
+  border-left: solid 1px #F0F0F0;
+}
+
+.buttons-section .btn:hover {
+  background: rgb(231, 231, 231) !important;
+  border-radius: 0px;
+}
+
+.buttons-section .del-btn:hover{
+  border-bottom-right-radius: 3px;
+}
+
+.buttons-section .cnl-btn:hover{
+  border-bottom-left-radius: 3px;
+}
+
+.cnl-btn, .del-btn{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.settings-tab{
+  position: absolute;
+  right: 0;
+  height: 100%;
+  top: 0;
+  background: #fff;
+  box-shadow: -1px 2px 12px 0px #848484;
+  width: 400px;
+  z-index: 10;
+  padding: 20px;
+}
+
+.settings-tab .close{
+  font-size: 35px;
+  font-family: lato;
+  font-weight: 400;
+}
+
+.settings-tab .set-bg{
+  width: 160px;
+  display: inline-block;
+  margin-top: 35px;
+}
+
+.notesimg-div{
+  margin-top: 20px; 
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 12px !important;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.notebook-div{
+  padding:15px 5px;
+  margin: 0px 10px; 
+  display:inline-block;
+}
+
+.nb-header{
+  font-family: lato;
+  font-size: 15px;
+  color: #000;
+  text-align: center;
+  font-weight: 700;
+}
+
+.nb-info-set{
+  float: left;
+  margin-top: 15px;
+  margin-left: 35px;
+  text-align: left;
+  width: 100%;
+}
+
+.nb-info-set img{
+  width: 25px;
+  float: left;
+  margin-right: 20px;
+  margin-top: 7px;
+}
+
+.overlay-div{
+  width: 100%;
+  height: 100%;
+  background: #0000008c;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.nb-info-set .note-heading{
+  border: none;
+  font-family: lato;
+  font-size:18px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+  display: inherit;
+}
+
+.cpy-txt{
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+  padding: 0px 60px;
+  text-align: center;
+  font-family: lato;
+  line-height: 1.5em;
+}
+
+.txt-left{
+  text-align: left;
+}
+
+.h10{
+  height:10px;
+}

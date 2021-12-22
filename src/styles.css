@@ -1,0 +1,97 @@
+/* Add application styles & imports to this file! */
+
+body{
+  background : #f7f7f7;
+}
+
+app-navbar{
+  height: 60px;
+  background : #fff;
+  box-shadow: 0px 1px 4px #999;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  color: #1976d2;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none !important;
+  z-index: 999;
+}
+
+a, a:hover {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.container{
+  width: 95%;
+}
+
+app-notebook{
+  height: 100%;
+  padding: 0px;
+  color: #1976d2;
+  display: block;
+}
+
+.notes-div{
+    margin-top: 20px;
+    background: #efefef;
+    min-height: 200px;    
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 12px !important;
+}
+
+.notes-div h4{
+  color: #fff;
+  font-family: lato;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.modal-sm{
+  width: 320px;
+}
+
+.modal-dialog {
+    width: 320px !important;
+    margin: 18% auto;
+}
+
+.modal-body{
+  padding: 0px;
+  width: 320px;
+}
+
+.modal-body h6{
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 25px 30px;
+    font-family: lato;
+    text-align: center;
+}
+
+.modal-header{
+  padding: 0px !important;
+  border: none;
+}
+
+.modal-header .close {
+    margin-top: 0;
+    position: relative;
+    top: 12px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal-dialog {
+      margin: 35% auto !important;
+  }
+}
+
